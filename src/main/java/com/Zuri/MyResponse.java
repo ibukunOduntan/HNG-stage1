@@ -3,7 +3,7 @@ package com.Zuri;
 public class MyResponse {
     private String slack_name;
 
-    private String dayOfWeek;
+    private String current_day;
     private String utc_time;
     private String track;
 
@@ -28,12 +28,12 @@ public class MyResponse {
         this.track = track;
     }
 
-    public String getDayOfWeek() {
-        return dayOfWeek;
+    public String getCurrent_day() {
+        return current_day;
     }
 
-    public void setDayOfWeek(String dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
+    public void setCurrent_day(String current_day) {
+        this.current_day = current_day;
     }
 
     public String getUtc_time() {
