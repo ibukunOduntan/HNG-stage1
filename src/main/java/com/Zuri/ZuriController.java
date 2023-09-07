@@ -12,7 +12,7 @@ import java.util.Locale;
 public class ZuriController {
 
 
-    @GetMapping("/info")
+    @GetMapping("")
     @ResponseBody
     public MyResponse getInfo(
             @RequestParam(name = "slack_name") String slack_name,
