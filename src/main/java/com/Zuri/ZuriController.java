@@ -40,7 +40,7 @@ public class ZuriController {
         response.setSlack_name(slack_name);
         response.setCurrent_day(dayOfWeek1);
         response.setTrack(track);
-        response.setUtc_time(currentUtcTime.toString());
+        response.setUtc_time(formattedTimestamp);
         response.setGithub_repo_url("https://github.com/ibukunOduntan/HNG-stage1");
         response.setGithub_file_url("https://github.com/ibukunOduntan/HNG-stage1/blob/main/src/main/java/com/Zuri/Application.java");
         response.setStatus_code(200);
