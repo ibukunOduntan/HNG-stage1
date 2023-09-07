@@ -3,6 +3,7 @@ package com.Zuri;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
@@ -18,6 +19,8 @@ public class ZuriController {
             @RequestParam(name = "track") String track) {
 
         Instant currentUtcTime = Instant.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd'T'HH:mm:ss'Z'").withZone(ZoneOffset.UTC);
+        String formattedTimestamp = formatter.format(currentUtcTime);
 
         // Convert UTC time to the local time zone (adjust for your desired time zone)
         ZoneId zoneId = ZoneId.of("UTC"); // Use your desired time zone here
@@ -35,13 +38,12 @@ public class ZuriController {
         // Create a MyResponse object and set the data
         MyResponse response = new MyResponse();
         response.setSlack_name(slack_name);
-        response.setDayOfWeek(dayOfWeek1);
+        response.setCurrent_day(dayOfWeek1);
         response.setTrack(track);
         response.setUtc_time(currentUtcTime.toString());
         response.setGithub_repo_url("https://github.com/ibukunOduntan/HNG-stage1");
-        response.setGithub_file_url("to be put");
+        response.setGithub_file_url("https://github.com/ibukunOduntan/HNG-stage1/blob/main/src/main/java/com/Zuri/Application.java");
         response.setStatus_code(200);
-
         return response;
     }
 
